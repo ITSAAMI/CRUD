@@ -7,7 +7,7 @@ include 'header.php';
         <?php
     include 'connection.php';
 
-    $sql = "SELECT * FROM `student` JOIN courses ON student.class = courses.cid";  
+    $sql = "SELECT * FROM `student` JOIN courses c ON student.class = courses.cid JOIN images ON student.image = image.img_id";  
 
     $result = mysqli_query($conn,$sql) or Die("Query Unsuccessful ");
 
@@ -44,6 +44,7 @@ include 'header.php';
           </tbody>
     </table>
 <?php }// if Body 
+
  mysqli_close($conn);
  ?>
 </div>
